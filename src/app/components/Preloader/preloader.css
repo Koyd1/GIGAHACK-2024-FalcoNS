@@ -1,0 +1,128 @@
+/* Preloader.css */
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 9999999;
+    transition: .9s;
+}
+
+.loader {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 45%;
+    transform: translateY(-45%);
+    transition: 0.5s;
+}
+
+.loader-outter {
+    position: absolute;
+    border: 4px solid #ffffff;
+    border-left-color: transparent;
+    border-bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+.loader-inner {
+    position: absolute;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    left: calc(40% - 21px);
+    top: calc(40% - 21px);
+    border-right: 0;
+    border-top-color: transparent;
+    animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+.indicator {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(1.5);
+}
+
+.indicator svg polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.indicator svg polyline#back {
+    stroke: #ffffff;
+}
+
+.indicator svg polyline#front {
+    stroke: #1A76D1;
+    stroke-dasharray: 12, 36;
+    stroke-dashoffset: 48;
+    animation: dash 1s linear infinite;
+}
+
+.preloader::before,
+.preloader::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60%;
+    z-index: -1;
+    background: #1A76D1;
+    transition: .9s;
+}
+
+.preloader::after {
+    left: auto;
+    right: 0;
+}
+
+.preloader.invisible {
+    visibility: hidden;
+}
+
+@keyframes loader-outter {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 48;
+    }
+    50% {
+        stroke-dashoffset: 12;
+    }
+    100% {
+        stroke-dashoffset: 48;
+    }
+}
