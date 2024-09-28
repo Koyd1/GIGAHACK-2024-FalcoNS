@@ -1,0 +1,66 @@
+.Features{
+    padding-top:0;
+}
+.index2{
+    padding-top:100px;
+}
+.Features.testimonial-page{
+    padding-top:100px;
+}
+
+h2 {
+    color: black;
+}
+
+p {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.single-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+    border-radius: 100%;
+    transition: all 0.4s ease;
+}
+
+.single-icon i {
+    font-size: 50px;
+    text-align: center;
+    transition: all 0.4s ease;
+    color: #4f97db;
+    border-color: transparent;
+}
+
+.single-features h3 {
+    padding-top: 20px;
+    color: #2C2D3F;
+    font-weight: 600;
+    font-size: 21px;
+    text-align: center;
+}
+
+.single-features p {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 20px;
+}
+
+.section-title img {
+    display: inline-block;
+}
+.row{
+    margin: 10px;
+}

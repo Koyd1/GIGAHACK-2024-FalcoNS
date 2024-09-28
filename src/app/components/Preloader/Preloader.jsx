@@ -1,5 +1,5 @@
 import React from "react";
-import "./preloader.css"; // Импортируй файл стилей
+import "./Preloader.css"; // Импортируй файл стилей
 
 const Preloader = ({ isLoading }) => {
   return (
