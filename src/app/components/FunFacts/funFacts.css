@@ -1,6 +1,7 @@
 /* Fun Facts Section */
 #fun-facts {
-    background-color: #1A76D1;
+    background: url('../../../../public/img/FunFacts.jpg') no-repeat center center / cover; /* Добавляем изображение фона */
+
     color: #fff;
     padding: 60px 0;
     text-align: center;
@@ -18,14 +19,37 @@
 }
 
 #fun-facts .content .counter {
-    font-size: 36px;
+
+    font-size: 40px;
+
     font-weight: 700;
     display: block;
 }
 
 #fun-facts .content p {
-    font-size: 16px;
+
+    font-size: 20px;
     margin-top: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#fun-facts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 118, 209, 0.7); /* Полупрозрачный синий цвет */
+    z-index: 1; /* Позволяет наложить фильтр под контентом */
+}
+
+#fun-facts .container {
+    position: relative; /* Позволяет контейнеру располагаться поверх псевдоэлемента */
+    z-index: 2; /* Устанавливаем более высокий z-index для контента */
+    color: #fff;
+
 }
 
 /* Media Queries for Larger Devices */
