@@ -13,16 +13,9 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-3 col-md-3 col-12">
                 {/* Start Logo */}
-                <div className="logo">
+                <div className="flex justify-center">
                   <Link href="/">
-                    {/*<img src="../../../public/img/invitro.png" alt="Logo" />*/}
-
-                    <Image
-                      src="/img/invitro.png"
-                      alt="Logo"
-                      width={100}
-                      height={100}
-                    />
+                    <img src="/img/invitro.png" alt="Logo" className="mr-3.5 ml-3.5 mt-3.5 mb-3.5 w-52"/>
                   </Link>
                 </div>
                 {/* End Logo */}
@@ -32,7 +25,7 @@ const Header = () => {
               </div>
               <div className="col-lg-7 col-md-9 col-12">
                 {/* Main Menu */}
-                <div className="main-menu">
+                <div className="main-menu ml-3.5">
                   <nav className="navigation">
                     <ul className="nav menu">
                       <li className="active">
@@ -81,9 +74,9 @@ const Header = () => {
               </div>
               <div className="col-lg-2 col-12">
                 <div className="get-quote">
-                  <Link href="/appointment" className="btn">
-                    Book Appointment
-                  </Link>
+                  {/*<Link href="/appointment" className="btn">*/}
+                  {/*  Book Appointment*/}
+                  {/*</Link>*/}
                 </div>
               </div>
             </div>
