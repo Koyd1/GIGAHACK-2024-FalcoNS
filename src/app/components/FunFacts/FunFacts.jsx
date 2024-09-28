@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./funFacts.css";
+
 
 const FunFacts = () => {
   return (
