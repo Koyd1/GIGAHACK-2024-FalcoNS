@@ -16,14 +16,7 @@ const App = () => {
   return (
     <div>
       <Preloader isLoading={isLoading} />
-      {!isLoading && (
-        <div>
-          {/*<Header />*/}
-          {/*<FeaturesSection />*/}
-          {/*<FunFacts />*/}
-          {/*<PricingCard />*/}
-        </div>
-      )}
+      {!isLoading && <div></div>}
     </div>
   );
 };
