@@ -1,5 +1,5 @@
 import React from "react";
-import "./PricingCard.css";
+import "./pricingCard.css";
 
 const PricingCard = ({ title, price, features, buttonText }) => {
   return (

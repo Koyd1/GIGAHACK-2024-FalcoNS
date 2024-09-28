@@ -1,5 +1,5 @@
 // FeatureItem.js
-import "./FeatureItem.css";
+import "./featureItem.css";
 import React from "react";
 
 function FeatureItem({ icon: Icon, title, description }) {
