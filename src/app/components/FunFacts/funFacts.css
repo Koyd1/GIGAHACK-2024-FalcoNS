@@ -1,6 +1,7 @@
 /* Fun Facts Section */
 #fun-facts {
     background: url('../../../../public/img/FunFacts.jpg') no-repeat center center / cover; /* Добавляем изображение фона */
+
     color: #fff;
     padding: 60px 0;
     text-align: center;
@@ -18,12 +19,15 @@
 }
 
 #fun-facts .content .counter {
+
     font-size: 40px;
+
     font-weight: 700;
     display: block;
 }
 
 #fun-facts .content p {
+
     font-size: 20px;
     margin-top: 10px;
     color: white;
@@ -45,6 +49,7 @@
     position: relative; /* Позволяет контейнеру располагаться поверх псевдоэлемента */
     z-index: 2; /* Устанавливаем более высокий z-index для контента */
     color: #fff;
+
 }
 
 /* Media Queries for Larger Devices */

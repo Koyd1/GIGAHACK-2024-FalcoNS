@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 0); // Задержка 3 секунды для загрузки
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -16,7 +16,14 @@ const App = () => {
   return (
     <div>
       <Preloader isLoading={isLoading} />
-      {!isLoading && <div></div>}
+
+      {!isLoading && (
+        <div>
+          {/*<Header />*/}
+          {/*<FeaturesSection/>*/}
+        </div>
+      )}
+
     </div>
   );
 };

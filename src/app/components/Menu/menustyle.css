@@ -1,0 +1,37 @@
+.menu {
+    background-color: #ffffff;
+    border: 1px solid #003F62;
+    padding: 10px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000;
+}
+
+.dashboardItem {
+    font-size: 16px;
+    color: #003F62;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+
+.dashboardItem.active {
+    background-color: #003F62;
+    color: #ffffff;
+}
+
+.menu .dashboardItem:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+}
