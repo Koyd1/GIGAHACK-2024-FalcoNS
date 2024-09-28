@@ -19,8 +19,9 @@ const App = () => {
       {!isLoading && (
         <div>
           {/*<Header />*/}
-          {/*<FeaturesSection/>*/}
-
+          {/*<FeaturesSection />*/}
+          {/*<FunFacts />*/}
+          {/*<PricingCard />*/}
         </div>
       )}
     </div>

@@ -54,7 +54,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="container box">
       {pricingOptions.map((option, index) => (
         <PricingCard key={index} {...option} />
       ))}
