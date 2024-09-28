@@ -18,9 +18,10 @@ const App = () => {
       <Preloader isLoading={isLoading} />
       {!isLoading && (
         <div>
-          {/*<Header />*/}
-          {/*<FeaturesSection/>*/}
-
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro,
+            sit!
+          </p>
         </div>
       )}
     </div>
