@@ -2,32 +2,32 @@ import "./featuresSection.css";
 import { FaAmbulance } from "react-icons/fa";
 import { MdLocalPharmacy } from "react-icons/md";
 import { CiStethoscope } from "react-icons/ci";
-import FeatureItem from "@/app/components/FeatureItem/FeatureItem";
+import FeatureItem from "../FeatureItem/FeatureItem";
 
 function FeaturesSection() {
   const features = [
     {
       icon: FaAmbulance,
-      title: "Emergency Help",
+      title: "Rapid Analyses",
       description:
         "Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.",
     },
     {
       icon: MdLocalPharmacy,
-      title: "Enriched Pharmacy",
+      title: "Medical Treatment",
       description:
         "Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.",
     },
     {
       icon: CiStethoscope,
-      title: "Medical Treatment",
+      title: "Professional Consultations",
       description:
         "Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.",
     },
   ];
 
   return (
-    <div className={"Feautes section"}>
+    <div className="Features section">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

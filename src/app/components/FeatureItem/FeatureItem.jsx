@@ -5,7 +5,7 @@ import React from "react";
 function FeatureItem({ icon: Icon, title, description }) {
   return (
     <div className="single-features">
-      <div className="signle-icon">
+      <div className="single-icon">
         <i>
           <Icon />
         </i>

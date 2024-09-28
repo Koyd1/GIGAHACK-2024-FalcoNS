@@ -17,11 +17,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Exo 2 Light"
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: wrap;
+    text-wrap: none;
   }
 }
