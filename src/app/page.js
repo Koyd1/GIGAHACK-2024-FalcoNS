@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Preloader from "./components/Preloader/Preloader.jsx";
-// import Header from "@/app/components/Heder/Heder"; // Проверь путь к компоненту
-import FeaturesSection from "@/app/components/FeaturesSection/FeaturesSection";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +19,7 @@ const App = () => {
       {!isLoading && (
         <div>
           {/*<Header />*/}
-          <FeaturesSection/>
+          {/*<FeaturesSection/>*/}
 
         </div>
       )}
