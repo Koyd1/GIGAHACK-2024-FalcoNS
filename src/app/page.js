@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 0); // Задержка 3 секунды для загрузки
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -20,7 +20,6 @@ const App = () => {
         <div>
           {/*<Header />*/}
           {/*<FeaturesSection/>*/}
-
         </div>
       )}
     </div>
