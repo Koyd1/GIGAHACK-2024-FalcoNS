@@ -1,14 +1,25 @@
-.Feautes{
+.Features{
     padding-top:0;
 }
 .index2{
     padding-top:100px;
 }
-.Feautes.testimonial-page{
+.Features.testimonial-page{
     padding-top:100px;
 }
 
-.signle-icon {
+h2 {
+    color: black;
+}
+
+p {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.single-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,15 +31,11 @@
     transition: all 0.4s ease;
 }
 
-.signle-icon i {
+.single-icon i {
     font-size: 50px;
     text-align: center;
     transition: all 0.4s ease;
-}
-
-
-.signle-icon i {
-    color: #fff;
+    color: #4f97db;
     border-color: transparent;
 }
 
@@ -43,6 +50,7 @@
 .single-features p {
     margin-top: 20px;
     text-align: center;
+    color: black;
 }
 
 .section-title {
