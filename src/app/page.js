@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 150); // Задержка 3 секунды для загрузки
+    }, 0); // Задержка 3 секунды для загрузки
 
     return () => clearTimeout(timer);
   }, []);
