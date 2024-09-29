@@ -12,10 +12,9 @@ const Header = () => {
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Doctors", link: "/doctors" },
-    { label: "Investigations", link: "/investigations" },
     { label: "Analyses", link: "/analyses" },
-    { label: "Blogs", link: "/blogs" },
-    { label: "Personal Account", link: "/account" },
+    { label: "Challenges", link: "/blogs" },
+    { label: "Personal Account", link: "/Account" },
   ];
 
   return (

@@ -1,0 +1,52 @@
+
+.container.box {
+
+    display: flex;
+    justify-content: center;
+    padding: 120px;
+    background-color: #f4f7f9;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin: 10px;
+}
+
+.title {
+    font-size: 24px;
+    color: #008f91; /* основной цвет */
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 40px;
+    font-weight: bold;
+    color: #003e53; /* темно-синий цвет для контраста */
+    margin: 20px 0;
+}
+
+.features-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.feature {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #00b3b3; /* акцентный цвет */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
