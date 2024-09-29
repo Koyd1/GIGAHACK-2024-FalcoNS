@@ -2,11 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { getCookie } from "@/app/utils/userLogin";
 // import Preloader from "./components/Preloader/Preloader.jsx";
+import { redirect } from "next/navigation";
+import Cookies from 'js-cookie';
+
 import PersonalAccount from "@/app/components/PersonalAccount/PersonalAccount";
 import Preloader from "@/app/components/Preloader/Preloader";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  if(!Cookies.get("logged_in", {path: "/pages"})) {
+    redirect("/pages/login");
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
