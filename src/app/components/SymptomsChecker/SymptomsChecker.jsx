@@ -154,11 +154,12 @@ function SymptomsChecker() {
           ))}
         </ul>
       </div>
-
-      <button onClick={handleGetSuggestions}>Get Suggestions</button>
-      <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
-        Reset Symptoms
-      </button>
+      <div className={"butBox"}>
+        <button onClick={handleGetSuggestions}>Get Suggestions</button>
+        <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
+          Reset Symptoms
+        </button>
+      </div>
 
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
