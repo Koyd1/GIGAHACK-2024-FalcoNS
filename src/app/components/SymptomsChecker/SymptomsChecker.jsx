@@ -163,13 +163,25 @@ function SymptomsChecker() {
       </div>
 
 
+      {/*<div className="suggestionsContainer">*/}
+      {/*  <h3>Suggested Tests:</h3>*/}
+      {/*  <ul>*/}
+      {/*    {aResults.map((test, index) => (*/}
+      {/*      <li key={index}>{test[1]}</li>*/}
+      {/*    ))}*/}
+      {/*  </ul>*/}
+      {/*</div>*/}
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
-        <ul>
+        <div className="suggestionsGrid">
           {aResults.map((test, index) => (
-            <li key={index}>{test[1]}</li>
+            <div key={index} className="suggestion-card">
+              <h4>{test[1]}</h4>
+              <p>{test[0]}</p>{" "}
+              {/* если есть дополнительная информация, можно её отобразить */}
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
