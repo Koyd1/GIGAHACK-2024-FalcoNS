@@ -155,8 +155,13 @@ function SymptomsChecker() {
         </ul>
       </div>
 
-      <button onClick={handleGetSuggestions}>Get Suggestions</button>
-      <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
+      <button onClick={handleGetSuggestions} className="caret-amber-50">
+        Get Suggestions
+      </button>
+      <button
+        onClick={handleResetSuggestions}
+        className="ml-10 bg-red-500 caret-amber-50"
+      >
         Reset Symptoms
       </button>
 
