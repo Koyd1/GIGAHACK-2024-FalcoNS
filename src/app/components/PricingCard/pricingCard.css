@@ -19,14 +19,14 @@
 
 .title {
     font-size: 24px;
-    color: #008f91; /* основной цвет */
+    color: #4f97db; /* основной цвет */
     margin-bottom: 10px;
 }
 
 .price {
     font-size: 40px;
     font-weight: bold;
-    color: #003e53; /* темно-синий цвет для контраста */
+    color: #2C2D3F;
     margin: 20px 0;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .button {
-    background-color: #00b3b3; /* акцентный цвет */
+   background-color:  #4f97db;
     color: #ffffff;
     border: none;
     border-radius: 5px;

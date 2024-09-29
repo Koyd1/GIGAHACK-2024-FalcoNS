@@ -54,7 +54,11 @@ input[type="text"] {
     padding: 0;
     margin: 0;
 }
-
+.butCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 button {
     margin-top: 20px;
     padding: 10px;
@@ -63,6 +67,7 @@ button {
     border: none;
     border-radius: 4px;
     font-size: 16px;
+    align-self: center;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -75,4 +80,49 @@ button:hover {
     margin-top: 20px;
     border-top: 1px solid #ccc;
     padding-top: 10px;
+}
+/* Контейнер для списка анализов */
+.suggestionsContainer {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.suggestionsContainer h3 {
+    color: #003F62;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили карточек анализов */
+.suggestion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-card h4 {
+    font-size: 18px;
+    color: #003F62;
+    margin: 0 0 10px 0;
+}
+
+.suggestion-card p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin: 0;
 }
