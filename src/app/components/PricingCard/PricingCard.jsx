@@ -13,7 +13,7 @@ const PricingCard = ({ title, price, features, buttonText }) => {
             style={{
               ...feature,
               textDecoration: feature.included ? "none" : "line-through",
-              color: feature.included ? "#008f91" : "#c4c4c4",
+              color: feature.included ? "#2C2D3F" : "#c4c4c4",
             }}
           >
             {feature.text}

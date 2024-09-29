@@ -19,7 +19,7 @@ form {
 }
 
 label {
-    font-size: 14px;
+    font-size: 20px;
     color: #003F62;
 }
 
@@ -27,7 +27,7 @@ select, input[type="date"] {
     padding: 8px;
     border: 1px solid #003F62;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 20px;
     color: #333;
 }
 .inputGroup {
@@ -42,7 +42,7 @@ select, input[type="date"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     box-sizing: border-box;
 }
 button {
@@ -54,8 +54,4 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #00509e;
 }

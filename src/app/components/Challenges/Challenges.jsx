@@ -3,7 +3,7 @@ import "./Challenges.css";
 
 const Challenges = ({ title, price, features, buttonText }) => {
   return (
-    <div className="card">
+    <div className="card mt-60">
       <h2 className="title">{title}</h2>
       <p className="price">{price}</p>
       <ul className="features-list">

@@ -69,7 +69,7 @@
 }
 
 .indicator svg polyline#front {
-    stroke: #1A76D1;
+    stroke: #003F62;
     stroke-dasharray: 12, 36;
     stroke-dashoffset: 48;
     animation: dash 1s linear infinite;
@@ -84,7 +84,7 @@
     height: 100%;
     width: 60%;
     z-index: -1;
-    background: #1A76D1;
+    background: #003F62;
     transition: .9s;
 }
 

@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { getCookie } from "@/app/utils/userLogin";
 // import Preloader from "./components/Preloader/Preloader.jsx";
-import Header from "@/app/components/Header/Header";
-import FeaturesSection from "@/app/components/FeaturesSection/FeaturesSection";
-import FunFacts from "@/app/components/FunFacts/FunFacts";
-import PricingCard from "@/app/components/PricingCard/PricingCard";
+import PersonalAccount from "@/app/components/PersonalAccount/PersonalAccount";
+import Preloader from "@/app/components/Preloader/Preloader";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,14 +18,10 @@ const App = () => {
 
   return (
     <div>
-      {/*<Preloader isLoading={isLoading} />*/}
-
+      <Preloader isLoading={isLoading} />
       {!isLoading && (
         <div>
-          <Header />
-          <FeaturesSection />
-          <FunFacts />
-          <PricingCard />
+          <PersonalAccount />
         </div>
       )}
     </div>
