@@ -19,7 +19,7 @@
 
 .title {
     font-size: 24px;
-    color: #4f97db; /* основной цвет */
+    color: #003F62; /* основной цвет */
     margin-bottom: 10px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .button {
-   background-color:  #4f97db;
+   background-color:  #003F62;
     color: #ffffff;
     border: none;
     border-radius: 5px;

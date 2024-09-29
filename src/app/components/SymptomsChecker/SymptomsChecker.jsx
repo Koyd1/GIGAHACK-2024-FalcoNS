@@ -154,22 +154,19 @@ function SymptomsChecker() {
           ))}
         </ul>
       </div>
-      <div className={"butCont"}>
-        <button onClick={handleGetSuggestions}>Get Suggestions</button>
 
-        <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
-          Reset Symptoms
-        </button>
-      </div>
+      <button onClick={handleGetSuggestions}>Get Suggestions</button>
+      <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
+        Reset Symptoms
+      </button>
+
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
-        <div className="suggestionsList">
+        <ul>
           {aResults.map((test, index) => (
-            <div key={index} className="suggestion-card">
-              <h4>{test[1]}</h4>
-            </div>
+            <li key={index}>{test[1]}</li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

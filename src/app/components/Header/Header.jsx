@@ -10,11 +10,11 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: "Home", link: "/" },
-    { label: "Doctors", link: "/doctors" },
-    { label: "Analyses", link: "/analyses" },
-    { label: "Challenges", link: "/blogs" },
-    { label: "Personal Account", link: "/Account" },
+    { label: "Home", link: "/pages/home" },
+    { label: "Doctors", link: "/pages/doctors" },
+    { label: "Analyses", link: "/pages/analyses" },
+    { label: "Challenges", link: "/pages/challenges" },
+    { label: "Personal Account", link: "/pages/account" },
   ];
 
   return (
@@ -33,17 +33,13 @@ const Header = () => {
                   />
                 </Link>
               </div>
-              {/*<div className="row menu">*/}
-              {/* Hamburger Icon */}
-              <div className="menu-icon" onClick={toggleMenu}>
+              <div className="menu-icon mb-4 ml-4" onClick={toggleMenu}>
                 <div className={`hamburger ${isOpen ? "open" : ""}`}>
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
               </div>
-              {/*</div>*/}
-              {/* Dropdown Menu */}
               <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
                 <ul>
                   {menuItems.map((item, index) => (
