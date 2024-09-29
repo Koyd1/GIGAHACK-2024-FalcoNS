@@ -15,6 +15,9 @@ const geistMono = localFont({
 export const metadata = {
   title: "FalcoNS && Invitro",
   description: "",
+  icons: {
+    icon: "/img/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
