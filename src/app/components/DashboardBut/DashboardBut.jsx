@@ -9,14 +9,12 @@ function DashboardBut({ setActivePage }) {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   const handleMenuItemClick = (page) => {
     setActivePage(page);
     setIsOpen(false);
   };
-
   return (
-    <div className={"butContainer"}>
+    <div className={"butContain"}>
       <button className="buttonProf" onClick={toggleMenu}>
         <AiOutlineMenu />
       </button>
