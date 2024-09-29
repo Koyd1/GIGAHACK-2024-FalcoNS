@@ -1,11 +1,11 @@
 import React from "react";
-import "./pricingCard.css";
+import "./Challenges.css";
 
-const PricingCard = ({ title, price, features, buttonText }) => {
+const Challenges = ({ title, price, features, buttonText }) => {
   return (
     <div className="card">
       <h2 className="title">{title}</h2>
-      <p className="price">${price}</p>
+      <p className="price">{price}</p>
       <ul className="features-list">
         {features.map((feature, index) => (
           <li
@@ -25,35 +25,36 @@ const PricingCard = ({ title, price, features, buttonText }) => {
   );
 };
 
-const Pricing = () => {
-  const pricingOptions = [
+const BlogCard = () => {
+  const BlogOptions = [
     {
-      title: "Cardiac Check-up",
-      price: 19,
+      title: "10000 Steps",
+      price: "-25%",
       features: [
-        { text: "Lorem ipsum dolor sit", included: true },
-        { text: "Cubitur sollicitudin fentum", included: true },
+        { text: "in 24 hours", included: true },
+        { text: "Until 09/09/2024", included: false },
       ],
-      buttonText: "Book Now",
+      buttonText: "See More",
     },
     {
-      title: "Full Check-up",
-      price: 39,
+      title: "2,5l Of Water",
+      price: "GIFT",
       features: [
-        { text: "Lorem ipsum dolor sit", included: true },
-        { text: "Cubitur sollicitudin fentum", included: true },
+        { text: "For a week", included: true },
+        { text: "Until 10/10/2024", included: true },
       ],
-      buttonText: "Book Now",
+
+      buttonText: "See More",
     },
   ];
 
   return (
     <div className="container box">
-      {pricingOptions.map((option, index) => (
-        <PricingCard key={index} {...option} />
+      {BlogOptions.map((option, index) => (
+        <Challenges key={index} {...option} />
       ))}
     </div>
   );
 };
 
-export default Pricing;
+export default BlogCard;
