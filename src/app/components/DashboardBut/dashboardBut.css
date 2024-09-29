@@ -1,9 +1,17 @@
-.but {
-    font-size: 25px;
+
+.butContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.buttonProf {
+    font-size: 30px;
     color: gray;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
-
-

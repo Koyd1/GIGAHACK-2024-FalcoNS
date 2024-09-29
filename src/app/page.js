@@ -1,12 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { redirect } from "next/navigation";
 import Preloader from "@/app/components/Preloader/Preloader";
-
+import Challenges from "@/app/components/Challenges/Challenges";
+import Header from "@/app/components/Header/Header";
 const App = () => {
-  const [isLoadings, setIsLoading] = useState(true);
-
-  redirect("/pages/home");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -1,11 +1,17 @@
-.main{
+
+.main {
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 60px;
 
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+
+}
+
+.main a {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 30px;
 }

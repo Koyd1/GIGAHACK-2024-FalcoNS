@@ -55,3 +55,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.butBox{
+    display: flex;
+    justify-content: center;
+}

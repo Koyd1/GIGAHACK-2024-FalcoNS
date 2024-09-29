@@ -20,38 +20,32 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-inner">
-        <div className="container">
-          <div className="inner">
-            <div className="row justify-between items-center">
-              {/* Logo */}
-              <div className="logo-container flex justify-center">
-                <Link href="/">
-                  <img
-                    src="/img/invitro.png"
-                    alt="Logo"
-                    className="mt-3.5 w-52"
-                  />
-                </Link>
-              </div>
-              <div className="menu-icon mb-4 ml-4" onClick={toggleMenu}>
-                <div className={`hamburger ${isOpen ? "open" : ""}`}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
-                <ul>
-                  {menuItems.map((item, index) => (
-                    <li key={index}>
-                      <Link href={item.link}>{item.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
+        {/* Menu Icon */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          <div className={`hamburger ${isOpen ? "open" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
+
+        {/* Logo */}
+        <div className="logo-container">
+          <Link href="/">
+            <img src="/img/invitro.png" alt="Logo" className="mt-3.5 w-52" />
+          </Link>
+        </div>
+
+        {/* Navigation Menu */}
+        <nav className={`nav-menu ${isOpen ? "open" : ""}`}>
+          <ul>
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.link}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
