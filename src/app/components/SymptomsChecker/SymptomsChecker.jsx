@@ -1,25 +1,117 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "./symptomsChecker.css";
-// import "../medicalAPIManager";
-//  import {getSymptoms} from "../medicalAPIManager";
-//
-// import {initSession} from "../medicalAPIManager";
-// import {acceptTerms} from "../medicalAPIManager";
-// import {updateFeature} from "../medicalAPIManager";
-// import {get} from "axios";
+
+import axios from "axios";
+
 
 function SymptomsChecker() {
-  let [query, setQuery] = useState("");
-  let [selectedSymptoms, setSelectedSymptoms] = useState([]);
-  let [suggestions, setSuggestions] = useState([]);
+  const [query, setQuery] = useState("");
+  const [selectedSymptoms, setSelectedSymptoms] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [options, setOptions] = useState([]);
+  const [symptomOptions, setSymptomOptions] = useState([]);
+  const [sessionId, setSessionId] = useState("");
+  const [aResults, setAResults] = useState([]);
 
-  const symptomOptions = ["hi", "jij", "jpofjoj", "pjpo"];
-  // console.log(getSymptoms())
-  const tests = ["hi", "jij", "jpofjoj", "pjpo"];
+
+
+  useEffect(() => {
+    const fetchOptions = async () => {
+      try {
+        const response = await fetch(
+          "https://api.endlessmedical.com/v1/dx/GetFeatures",
+        );
+        const data = await response.json();
+        setSymptomOptions(data.data);
+        setOptions(data.options || []); 
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+    fetchOptions();
+  }, []);
+
+  useEffect(() => {
+    const fetchOptions2 = async () => {
+      try {
+        const response = await fetch(
+          "https://api.endlessmedical.com/v1/dx/InitSession",
+        );
+        const data = await response.json();
+        setSessionId(data.SessionID);
+        setOptions(data.options || []);
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+    fetchOptions2();
+  }, []);
+
+  useEffect(() => {
+    const acceptTerms = async () => {
+      try {
+        const response = await axios.post(
+          "https://api.endlessmedical.com/v1/dx/AcceptTermsOfUse?SessionID=" +
+            sessionId +
+            "&passphrase=I%20have%20read%2C%20understood%20and%20I%20accept%20and%20agree%20to%20comply%20with%20the%20Terms%20of%20Use" +
+            "%20of%20EndlessMedicalAPI%20and%20Endless%20Medical%20services.%20The%20Terms%20of%20Use%20are%20available%20on%20endlessmedical.com",
+        );
+        console.log("Ответ с сервера:", response.data);
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+    acceptTerms();
+  }, [sessionId]);
+
+  useEffect(() => {
+    const updateFeature = async () => {
+      for (const symptom of selectedSymptoms) {
+        try {
+          const response = await axios.post(
+            `https://api.endlessmedical.com/v1/dx/UpdateFeature?SessionID=${sessionId}&name=${symptom}&value=1`,
+          );
+
+          console.log(
+            "Ответ сервера для симптома:",
+            symptom,
+            ":",
+            response.data,
+          );
+        } catch (error) {
+          console.error(
+            "Ошибка при загрузке данных для симптома",
+            symptom,
+            ":",
+            error,
+          );
+        }
+      }
+    };
+
+    updateFeature();
+  }, [sessionId, selectedSymptoms]); // Зависимости useEffect
+
+  const GetYourTests = async () => {
+    try {
+      const response = await fetch(
+        `https://api.endlessmedical.com/v1/dx/GetSuggestedFeatures_Tests?SessionID=${sessionId}&TopDiseasesToTake=5`,
+      );
+      const data = await response.json();
+      setAResults(data.SuggestedFeatures);
+      setOptions(data.options || []);
+    } catch (error) {
+      console.error("Ошибка при загрузке данных:", error);
+    }
+  };
+
 
   const filteredSymptoms = symptomOptions.filter((symptom) =>
     symptom.toLowerCase().includes(query.toLowerCase()),
   );
+
+
 
   const addSymptom = (symptom) => {
     if (!selectedSymptoms.includes(symptom)) {
@@ -29,7 +121,13 @@ function SymptomsChecker() {
   };
 
   const handleGetSuggestions = () => {
-    setSuggestions(tests);
+
+    GetYourTests();
+  };
+
+  const handleResetSuggestions = () => {
+    setSelectedSymptoms([]);
+    setAResults([]);
   };
 
   return (
@@ -66,11 +164,18 @@ function SymptomsChecker() {
 
       <button onClick={handleGetSuggestions}>Get Suggestions</button>
 
+      <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
+        Reset Symptoms
+      </button>
+
+
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
         <ul>
-          {suggestions.map((test, index) => (
-            <li key={index}>{test}</li>
+
+          {aResults.map((test, index) => (
+            <li key={index}>{test[1]}</li>
+
           ))}
         </ul>
       </div>
