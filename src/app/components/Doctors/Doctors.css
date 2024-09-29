@@ -49,7 +49,7 @@
 
 .included {
     text-decoration: none;
-    color: #008f91;
+    color: #003F62;
 }
 
 .excluded {
@@ -58,7 +58,7 @@
 }
 
 .theme-button {
-    background-color: #008f91;
+    background-color: #003F62;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -68,5 +68,5 @@
 }
 
 .theme-button:hover {
-    background-color: #006f75; /* Более тёмный цвет при наведении */
+    background-color: #00507c; /* Более тёмный цвет при наведении */
 }

@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// import Preloader from "./components/Preloader/Preloader.jsx";
-import PersonalAccount from "@/app/components/PersonalAccount/PersonalAccount";
+import Header from "@/app/components/Header/Header";
+import Challenges from "@/app/components/Challenges/Challenges";
+import Preloader from "@/app/components/Preloader/Preloader";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,11 +17,12 @@ const App = () => {
 
   return (
     <div>
-      {/*<Preloader isLoading={isLoading} />*/}
+      <Preloader isLoading={isLoading} />
 
       {!isLoading && (
-        <div>
-          <PersonalAccount />
+        <div className="mb-10">
+          <Header />
+          <Challenges />
         </div>
       )}
     </div>

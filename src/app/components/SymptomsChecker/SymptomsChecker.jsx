@@ -4,7 +4,6 @@ import "./symptomsChecker.css";
 
 import axios from "axios";
 
-
 function SymptomsChecker() {
   const [query, setQuery] = useState("");
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
@@ -14,8 +13,6 @@ function SymptomsChecker() {
   const [sessionId, setSessionId] = useState("");
   const [aResults, setAResults] = useState([]);
 
-
-
   useEffect(() => {
     const fetchOptions = async () => {
       try {
@@ -24,7 +21,7 @@ function SymptomsChecker() {
         );
         const data = await response.json();
         setSymptomOptions(data.data);
-        setOptions(data.options || []); 
+        setOptions(data.options || []);
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
       }
@@ -106,12 +103,9 @@ function SymptomsChecker() {
     }
   };
 
-
   const filteredSymptoms = symptomOptions.filter((symptom) =>
     symptom.toLowerCase().includes(query.toLowerCase()),
   );
-
-
 
   const addSymptom = (symptom) => {
     if (!selectedSymptoms.includes(symptom)) {
@@ -121,7 +115,6 @@ function SymptomsChecker() {
   };
 
   const handleGetSuggestions = () => {
-
     GetYourTests();
   };
 
@@ -163,19 +156,15 @@ function SymptomsChecker() {
       </div>
 
       <button onClick={handleGetSuggestions}>Get Suggestions</button>
-
       <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
         Reset Symptoms
       </button>
 
-
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
         <ul>
-
           {aResults.map((test, index) => (
             <li key={index}>{test[1]}</li>
-
           ))}
         </ul>
       </div>

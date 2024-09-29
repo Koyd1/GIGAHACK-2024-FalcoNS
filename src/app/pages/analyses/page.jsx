@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/app/components/Header/Header";
 import Analyses from "@/app/components/Analyses/Analyses";
 const analysesData = [
@@ -64,7 +65,7 @@ const analysesData = [
   },
 ];
 
-function AnalysesPage() {
+function Page() {
   return (
     <>
       <Header />
@@ -72,4 +73,4 @@ function AnalysesPage() {
     </>
   );
 }
-export default AnalysesPage;
+export default Page;
