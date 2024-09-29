@@ -4,13 +4,11 @@
 
 :root {
   --background: #ffffff;
-
   --foreground: #000000;
 
 
 @media (prefers-color-scheme: light) {
   :root {
-
     --background: #ffffff;
     --foreground: #000000;
 
@@ -84,7 +82,6 @@ form button:hover {
   background-color: #003F62;
 }
 
-/* Дополнительные стили для чекбоксов, радио и других элементов */
 form input[type="checkbox"],
 form input[type="radio"] {
   margin-right: 10px;
@@ -104,4 +101,4 @@ form .form-group.inline {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+}}
