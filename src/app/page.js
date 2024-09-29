@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Preloader from "./components/Preloader/Preloader.jsx";
-
+import Preloader from "@/app/components/Preloader/Preloader";
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,14 +15,7 @@ const App = () => {
   return (
     <div>
       <Preloader isLoading={isLoading} />
-
-      {!isLoading && (
-        <div>
-          {/*<Header />*/}
-          {/*<FeaturesSection/>*/}
-        </div>
-      )}
-
+      {!isLoading && <div></div>}
     </div>
   );
 };
