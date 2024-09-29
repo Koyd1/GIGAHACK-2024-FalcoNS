@@ -3,19 +3,44 @@ import React from 'react';
 import { redirect } from "next/navigation";
 import { firebase } from "../../utils/firebaseConfig";
 import { collection, getDocs, query, where } from "@firebase/firestore";
+import Cookies from 'js-cookie';
 import Link from "next/link";
 
-export function getCookie(key) {
-    let b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
-    return b ? b.pop() : "";
-}
+// export function getCookie(key) {
+//     let b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
+//     return b ? b.pop() : "";
+// }
+//
+// export function logout() {
+//     document.cookie = "logged_in=";
+//     window.location.reload();
+// }
 
-export function logout() {
-    document.cookie = "logged_in=";
-    window.location.reload();
-}
-
-export async function checkUser(formData) {
+// export async function checkUser(formData) {
+//     const id = formData.get("id");
+//     const password = formData.get("password");
+//     const ref = collection(firebase, "users");
+//     const querried = [];
+//     const q = query(
+//         ref,
+//         where("idPatient", "==", id),
+//         where("password", "==", password),
+//     );
+//     const querySnapshot = await getDocs(q);
+//     querySnapshot.forEach((doc) => {
+//         querried.push(doc.data());
+//     });
+//
+//     if (querried.length === 0) {
+//         // document.cookie = "logged_in=";
+//         alert("User does not exist!");
+//         console.log("User does not exist!");
+//     } else {
+//         document.cookie = "logged_in=true";
+//         redirect("/");
+//     }
+// }
+async function checkUser(formData) {
     const id = formData.get("id");
     const password = formData.get("password");
     const ref = collection(firebase, "users");
@@ -31,20 +56,25 @@ export async function checkUser(formData) {
     });
 
     if (querried.length === 0) {
-        document.cookie = "logged_in=";
+        Cookies.set("logged_in", "");
+        // document.cookie = "logged_in=";
         alert("User does not exist!");
         console.log("User does not exist!");
     } else {
-        document.cookie = "logged_in=true";
+        // document.cookie = "logged_in=true";
+        Cookies.set("logged_in", "true");
         redirect("/");
     }
 }
+
 
 export default function LoginPage() {
     // const idRef = useRef();
     // const passRef = useRef();
 
-    if (getCookie("logged_in")) {
+
+    // if (getCookie("logged_in")) {
+    if(Cookies.get("logged_in")) {
         redirect("/");
     }
 
@@ -57,7 +87,7 @@ export default function LoginPage() {
                 <input name="password" type="password" required/>
                 <button>Login</button>
                 <h3>
-                    Don't have an account:
+                    Do not have an account:
                     <Link href="/pages/register">Register Here</Link>
                 </h3>
             </form>
