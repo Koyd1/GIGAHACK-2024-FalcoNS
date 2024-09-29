@@ -1,0 +1,74 @@
+
+
+/* Заголовок секции */
+.section-title {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.single-features{
+    display: flex;
+    flex-direction: column;
+}
+/* Контент анализов */
+.analysis-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовки анализов */
+.single-features h3 {
+    color: #2C2D3F;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Описание анализов */
+.single-features p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.book-button {
+    padding: 10px 15px;
+    background-color: #4f97db;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    align-self: center;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.page-button.active {
+    background-color: #4f97db;
+    color: white;
+}
+
+.page-button:hover {
+    background-color: #4f97db;
+    color: white;
+}
