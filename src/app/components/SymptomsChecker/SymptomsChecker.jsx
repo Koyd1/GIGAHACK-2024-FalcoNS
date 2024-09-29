@@ -1,20 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./symptomsChecker.css";
+
 import axios from "axios";
-// import "../medicalAPIManager";
-// import { get } from "axios";
+
 
 function SymptomsChecker() {
   const [query, setQuery] = useState("");
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-  const [options, setOptions] = useState([]); // Список опций с API
-  const [symptomOptions, setSymptomOptions] = useState([]); // Выбранные опции
+  const [options, setOptions] = useState([]);
+  const [symptomOptions, setSymptomOptions] = useState([]);
   const [sessionId, setSessionId] = useState("");
   const [aResults, setAResults] = useState([]);
 
-  // console.log(getSymptoms())
+
 
   useEffect(() => {
     const fetchOptions = async () => {
@@ -24,9 +24,7 @@ function SymptomsChecker() {
         );
         const data = await response.json();
         setSymptomOptions(data.data);
-
-        // console.log("Данные с API:", data.data); // Проверьте формат данных
-        setOptions(data.options || []); // Обработка данных
+        setOptions(data.options || []); 
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
       }
@@ -42,8 +40,7 @@ function SymptomsChecker() {
         );
         const data = await response.json();
         setSessionId(data.SessionID);
-        // console.log("Данные с API:", data.data); // Проверьте формат данных
-        setOptions(data.options || []); // Обработка данных
+        setOptions(data.options || []);
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
       }
@@ -66,7 +63,7 @@ function SymptomsChecker() {
       }
     };
     acceptTerms();
-  }, [sessionId]); // Зависимость от sessionId
+  }, [sessionId]);
 
   useEffect(() => {
     const updateFeature = async () => {
@@ -96,7 +93,6 @@ function SymptomsChecker() {
     updateFeature();
   }, [sessionId, selectedSymptoms]); // Зависимости useEffect
 
-  // useEffect(() => {
   const GetYourTests = async () => {
     try {
       const response = await fetch(
@@ -104,18 +100,19 @@ function SymptomsChecker() {
       );
       const data = await response.json();
       setAResults(data.SuggestedFeatures);
-
-      // console.log("Данные с API:", data.data); // Проверьте формат данных
-      setOptions(data.options || []); // Обработка данных
+      setOptions(data.options || []);
     } catch (error) {
       console.error("Ошибка при загрузке данных:", error);
     }
   };
 
+
   const filteredSymptoms = symptomOptions.filter((symptom) =>
     symptom.toLowerCase().includes(query.toLowerCase()),
   );
-  console.log(aResults);
+
+
+
   const addSymptom = (symptom) => {
     if (!selectedSymptoms.includes(symptom)) {
       setSelectedSymptoms([...selectedSymptoms, symptom]);
@@ -124,6 +121,7 @@ function SymptomsChecker() {
   };
 
   const handleGetSuggestions = () => {
+
     GetYourTests();
   };
 
@@ -131,6 +129,7 @@ function SymptomsChecker() {
     setSelectedSymptoms([]);
     setAResults([]);
   };
+
   return (
     <div className="symptomsCheckerContainer">
       <h2>Symptoms Checker</h2>
@@ -164,15 +163,19 @@ function SymptomsChecker() {
       </div>
 
       <button onClick={handleGetSuggestions}>Get Suggestions</button>
+
       <button onClick={handleResetSuggestions} className="ml-10 bg-red-500">
         Reset Symptoms
       </button>
 
+
       <div className="suggestionsContainer">
         <h3>Suggested Tests:</h3>
         <ul>
+
           {aResults.map((test, index) => (
             <li key={index}>{test[1]}</li>
+
           ))}
         </ul>
       </div>
