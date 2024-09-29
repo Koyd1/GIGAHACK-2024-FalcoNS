@@ -1,9 +1,15 @@
 
 .header {
-    background-color: #fff;
-    position: relative;
-    z-index: 999;
+    position: fixed;  /* Фиксированное позиционирование */
+    top: 0;           /* Прикрепляем к верхней части экрана */
+    left: 0;          /* Растягиваем по ширине */
+    right: 0;         /* Растягиваем по ширине */
+    z-index: 1000;    /* Задаем высокий z-index, чтобы хедер был поверх остального контента */
+    background-color: #fff;  /* Фон хедера */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Тень для отделения от контента */
+    transition: background-color 0.3s ease;     /* Плавный переход при изменении стиля */
 }
+
 
 /* Логотип */
 .logo-container img {

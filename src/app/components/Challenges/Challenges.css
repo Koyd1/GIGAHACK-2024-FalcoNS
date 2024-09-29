@@ -1,7 +1,9 @@
-.container {
+
+.container.box {
+
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 120px;
     background-color: #f4f7f9;
 }
 

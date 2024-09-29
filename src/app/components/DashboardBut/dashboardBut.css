@@ -1,0 +1,9 @@
+.but {
+    font-size: 25px;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+

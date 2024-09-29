@@ -1,0 +1,78 @@
+/* Fun Facts Section */
+#fun-facts {
+    background: url('../../../../public/img/FunFacts.jpg') no-repeat center center / cover; /* Добавляем изображение фона */
+
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+}
+
+#fun-facts .single-fun {
+    margin-bottom: 30px;
+}
+
+#fun-facts .single-fun i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+#fun-facts .content .counter {
+
+    font-size: 40px;
+
+    font-weight: 700;
+    display: block;
+}
+
+#fun-facts .content p {
+
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#fun-facts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 118, 209, 0.7); /* Полупрозрачный синий цвет */
+    z-index: 1; /* Позволяет наложить фильтр под контентом */
+}
+
+#fun-facts .container {
+    position: relative; /* Позволяет контейнеру располагаться поверх псевдоэлемента */
+    z-index: 2; /* Устанавливаем более высокий z-index для контента */
+    color: #fff;
+
+}
+
+/* Media Queries for Larger Devices */
+@media (min-width: 768px) {
+    #fun-facts .single-fun {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #fun-facts {
+        padding: 80px 0;
+    }
+
+    #fun-facts .single-fun i {
+        font-size: 50px;
+    }
+
+    #fun-facts .content .counter {
+        font-size: 48px;
+    }
+
+    #fun-facts .content p {
+        font-size: 18px;
+    }
+}
