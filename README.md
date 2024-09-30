@@ -16,5 +16,4 @@
 - [Vercel](https://vercel.com/)
 - [Firebase](https://firebase.google.com/)
 
-
-
+preview: https://youtu.be/F68V-1VFiE4
