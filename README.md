@@ -17,3 +17,4 @@
 - [Firebase](https://firebase.google.com/)
 
 preview: https://youtu.be/F68V-1VFiE4
+presentation: https://github.com/Koyd1/GIGAHACK-2024/blob/main/FalcoNS_GigaHack.pdf
